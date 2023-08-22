@@ -1,7 +1,6 @@
 import React from "react";
 import Config from "../Config.json";
 import { Helmet } from "react-helmet";
-//import { NavLink, Link } from "react-router-dom";
 import videoBG from "../assets/hero.mp4";
 import snowboard_placeholder from "../assets/snowboard_placeholder.jpg";
 import markus_spiske from "../assets/markus-spiske.jpg";
@@ -205,10 +204,10 @@ class Home extends React.Component {
           <div className="produkt-grid">
             <div className="produkt produkt1">
               <img src={skis} alt="skidor" className="produktbild" />
-              <button className="overlay" id="add_to_cart">
+              <a href="kassa.html" className="overlay" id="add_to_cart">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
-              </button>
+              </a>
               <div className="produkt-info">
                 SKIDOR
                 <br />
@@ -218,7 +217,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt2">
               <img src={skis} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -231,7 +230,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt3">
               <img src={snowboard} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -244,7 +243,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt4">
               <img src={snowboard} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -257,7 +256,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt4">
               <img src={skis} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -270,7 +269,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt4">
               <img src={skis} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -283,7 +282,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt4">
               <img src={snowboard} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -296,7 +295,7 @@ class Home extends React.Component {
             </div>
             <div className="produkt produkt4">
               <img src={snowboard} alt="skidor" className="produktbild" />
-              <a href="#" className="overlay">
+              <a href="kassa.html" className="overlay">
                 LÄGG TILL
                 <p>(Fler detaljer i nästa steg)</p>
               </a>
@@ -342,6 +341,7 @@ class Home extends React.Component {
             <a
               href="https://docs.google.com/forms/d/1CLQvqvVp3AzX8_Rch7EFCzQXbIK8jp4beSusImLlONc/viewform?edit_requested=true"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="knapp">Till anmälan</div>
             </a>
@@ -355,6 +355,7 @@ class Home extends React.Component {
             <a
               href="https://docs.google.com/forms/d/1CLQvqvVp3AzX8_Rch7EFCzQXbIK8jp4beSusImLlONc/viewform?edit_requested=true"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="knapp">Till anmälan</div>
             </a>
@@ -368,7 +369,7 @@ class Home extends React.Component {
         <div className="pistkarta-remsa">
           <div className="pistkarta-container">
             <div className="slider-inner">
-              <img src={pistkarta} className="active" />
+              <img src={pistkarta} className="active" alt="pistkarta" />
             </div>
             <div className="pistinfo2">Klicka på kartan för detaljer.</div>
           </div>
