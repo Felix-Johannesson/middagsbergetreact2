@@ -1,7 +1,6 @@
 import React from "react";
 import Config from "../Config.json";
 import { Helmet } from "react-helmet";
-//import { NavLink, Link } from "react-router-dom";
 
 const TITLE = "Kassa | " + Config.SITE_TITLE;
 const CANONICAL = Config.SITE_DOMAIN + "/";

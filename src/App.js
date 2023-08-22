@@ -1,8 +1,6 @@
 import React from "react";
-
 import Home from "./pages/Home";
 import Kassa from "./pages/Kassa";
-
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { BodyStyles } from "./components/StyleComponents";
