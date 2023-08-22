@@ -1,7 +1,7 @@
 import React from "react";
 import Config from "../Config.json";
 import { Helmet } from "react-helmet";
-import { NavLink, Link } from "react-router-dom";
+//import { NavLink, Link } from "react-router-dom";
 import videoBG from "../assets/hero.mp4";
 import snowboard_placeholder from "../assets/snowboard_placeholder.jpg";
 import markus_spiske from "../assets/markus-spiske.jpg";
