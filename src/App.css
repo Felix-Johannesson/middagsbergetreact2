@@ -1,0 +1,654 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+:root {
+  --white: #f0f0ec;
+  --dark-white: #b1b1ac;
+  --black: #1b1e20;
+  --light-black: #2d3438;
+  --öppettider: #ccdee7;
+  --öppettider-Faded: #ccdee77a;
+  --priser: #ccd6e7;
+  --priser-faded: #ccd6e77a;
+  --uthyrning: #e1d1e7;
+  --lärDig: #d9f4f1;
+  --pistKarta: #e2dbf8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+}
+
+main {
+  background-color: var(red);
+}
+
+/* DEN HÄR VERKAR INTE GÖRA NÅGOT??  */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/*
+hero till nya
+DEN HÄR VERKAR INTE GÖRA NÅGOT??
+*/
+/* .hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+} */
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0px 7%;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1000;
+  background-color: var(--black);
+}
+
+.nav_after_scroll {
+  background-color: var(--black);
+  transition: 1s;
+  box-shadow: 0 2px 20px var(--black);
+}
+
+.test {
+  background-color: red;
+}
+
+#logo {
+  width: 50px;
+  transition: width 0.3s ease-in-out;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#title {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  transition: letter-spacing 0.3s ease-in-out;
+  font-size: 48px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+}
+
+#subtitle {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411);
+  font-size: 24px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.content {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.title {
+  color: var(--white);
+  text-align: right;
+  align-self: center;
+  grid-column: span 2 / auto;
+}
+
+.button {
+  place-self: center;
+  font-size: 24px;
+}
+
+.button div {
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.öppettider-knapp {
+  background-color: var(--öppettider);
+}
+
+.priser-knapp {
+  background-color: var(--priser);
+}
+
+.uthyrning-knapp {
+  background-color: var(--uthyrning);
+}
+
+.lär-dig-knapp {
+  background-color: var(--lärDig);
+}
+
+.pistkarta-knapp {
+  background-color: var(--pistKarta);
+}
+
+.background-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .background-video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .background-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/*
+Öppettider
+*/
+
+.avdelare {
+  height: 56px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  background: var(--white);
+}
+
+.avdelare h2 {
+  width: 240px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px 0px 0px 5px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 500;
+  right: 0px;
+  color: var(--black);
+}
+
+.avdelare .oppettider {
+  background-color: var(--öppettider);
+}
+
+.öppettider {
+  display: grid;
+  grid-template-areas: "picture table table";
+  gap: 1rem;
+  height: 50vh;
+  background-color: var(--white);
+}
+
+.öppettider .picture {
+  grid-area: picture;
+  background-size: cover;
+  min-width: 400px;
+  margin-left: 56px;
+}
+.öppettider .table {
+  grid-area: table;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  overflow-x: scroll;
+  white-space: nowrap;
+  width: 85%;
+  margin-left: 56px;
+  margin-top: 32px;
+  height: fit-content;
+}
+
+.öppettider table {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.öppettider table th {
+  background-color: var(--öppettider);
+  padding: 5px;
+  color: var(--black);
+}
+
+.öppettider table td {
+  color: var(--black);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.öppettider table .mörk {
+  background: var(--öppettider-Faded);
+}
+
+.vänsteruppe {
+  border-radius: 5px 0px 0px 0px;
+}
+.högeruppe {
+  border-radius: 0px 5px 0px 0px;
+}
+.vänsternere {
+  border-radius: 0px 0px 0px 5px;
+}
+.högernere {
+  border-radius: 0px 0px 5px 0px;
+}
+
+/*
+Priser
+*/
+.priser-titel {
+  background-color: var(--priser);
+}
+
+.priser {
+  background-color: var(--white);
+  display: grid;
+  grid-template-areas: "table table picture" "table table picture";
+  height: 50vh;
+}
+
+.priser .table div {
+  color: var(--black);
+}
+
+.priser .table {
+  grid-area: table;
+  display: grid;
+  align-items: center;
+  justify-content: left;
+  margin-left: 56px;
+  margin-right: 56px;
+  overflow: auto;
+}
+
+.priser table {
+  border-radius: 5px;
+  padding: 5px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+.priser table th {
+  background-color: var(--priser);
+  padding: 5px;
+  color: var(--black);
+}
+
+.priser table td {
+  color: var(--black);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.priser .mörk {
+  background: var(--priser-faded);
+}
+
+.priser .kassa {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.priser .kassa a {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--black);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.priser .info {
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.priser p {
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 350;
+}
+
+.priser .picture {
+  grid-area: picture;
+  background-size: cover;
+  min-width: 400px;
+  margin-right: 56px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/*
+uthyrning
+*/
+.uthyrning {
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-top: 40px;
+}
+
+.produkt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-left: 56px;
+}
+
+.produkt-grid .produkt {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 135px;
+  left: 0;
+  width: 200px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  visibility: hidden;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.produktbild:hover + .overlay {
+  position: absolute;
+  background-color: red;
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.overlay:hover {
+  visibility: visible;
+  transition: 0.3s;
+}
+
+.produkt-grid .produktbild {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.produktbild:hover + .overlay {
+  background-color: var(--black);
+  opacity: 0.8;
+  object-fit: cover;
+  transition: 0.2s;
+}
+
+.produkt .produkt-info {
+  color: var(--black);
+}
+
+.overlay p {
+  font-size: 12px;
+}
+
+.uthyrning .info {
+  padding-right: 30px;
+  color: var(--black);
+}
+
+.uthyrning .info .uthyrning-till-kassa {
+  color: var(--white);
+  text-align: center;
+  width: 130px;
+  background-color: var(--black);
+  border-radius: 5px;
+  margin-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+/*
+lär dig
+*/
+.lär-dig {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  background-color: var(--white);
+  height: 600px;
+}
+
+.lär-dig .text-container {
+  height: fit-content;
+  padding: 24px;
+}
+
+.lär-dig p {
+  color: var(--black);
+}
+
+.lär-dig .knapp {
+  text-align: center;
+  width: 130px;
+  background-color: var(--black);
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 5px;
+}
+
+.lär-dig .picture-container {
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.lär-dig .picture {
+  object-fit: cover;
+  padding: 56px;
+  padding-top: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+Pistkarta jquery
+*/
+
+.pistkarta-remsa {
+  background-color: var(--white);
+}
+
+.pistkarta-container {
+  width: 80%;
+  margin: 40px auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  overflow: auto;
+  padding-bottom: 40px;
+}
+
+.slider-inner {
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+  float: none;
+  margin: auto;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.slider-inner img {
+  display: none;
+  width: 100%;
+}
+
+.slider-inner img.active {
+  display: inline-block;
+}
+
+.pistinfo2 {
+  color: var(--black);
+  width: 80%;
+  margin: auto;
+}
+
+/*
+footer
+*/
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  background-color: var(--black);
+  position: relative;
+  height: 300px;
+}
+
+.footer .left {
+  color: var(--light-black);
+  padding: 50px;
+  position: absolute;
+  bottom: 0;
+}
+.footer .right {
+  padding: 50px;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+input {
+  all: unset;
+  background-color: var(--light-black);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+form .knapp {
+  background-color: var(--white);
+  color: var(--black);
+  cursor: pointer;
+}
+
+/*
+Kassa
+*/
+
+.avdelare-kassa {
+  margin-top: 110px;
+}
+
+.kassa-knapp {
+  background-color: var(--black);
+}
+
+.avdelare-kassa h2 {
+  color: var(--white);
+}
+
+.kassa-table {
+  border-radius: 5px;
+  padding: 5px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  max-width: 1000px;
+  min-width: 400px;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.kassa-table table {
+  background-color: var(--white);
+  width: 100%;
+}
+
+.kassa-table th {
+  background-color: var(--black);
+}
+
+.kassa-table td {
+  color: var(--black);
+  padding: 5px;
+}
+
+.kassa-table .mörk {
+  background-color: var(--dark-white);
+}
+
+.kassa-form {
+  margin: 56px;
+  width: fit-content;
+  margin: auto;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.kassa-form label {
+  color: var(--black);
+}
+
+.kassa-form input {
+  background-color: var(--light-black);
+  width: 100%;
+}
+
+.kassa-form .knapp {
+  background-color: var(--black);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.kassa-form h3 {
+  color: var(--black);
+  padding-bottom: 15px;
+}
